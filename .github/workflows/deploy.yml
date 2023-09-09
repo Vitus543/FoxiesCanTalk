@@ -3,7 +3,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main
+      - master
 jobs:
   deploy:
     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
@@ -26,4 +26,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.4.3
         with:
           folder: build # The folder the action should deploy.
-          branch: main
+          branch: master
