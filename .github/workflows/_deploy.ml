@@ -28,4 +28,3 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.4.3
         with:
           folder: public # The folder the action should deploy.
-          branch: master
