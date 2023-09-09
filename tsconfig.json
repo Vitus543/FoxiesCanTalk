@@ -1,45 +1,25 @@
 {
 	"compilerOptions": {
-		"esModuleInterop": true,
-		"jsx": "react",
-		"module": "esnext",
-		"moduleResolution": "node",
-		"lib": ["dom", "esnext"],
-		"strict": true,
-		"sourceMap": true,
-		"target": "esnext"
+	  "target": "es5",
+	  "lib": [
+		"dom",
+		"dom.iterable",
+		"esnext"
+	  ],
+	  "allowJs": true,
+	  "skipLibCheck": true,
+	  "esModuleInterop": true,
+	  "allowSyntheticDefaultImports": true,
+	  "strict": true,
+	  "forceConsistentCasingInFileNames": true,
+	  "noFallthroughCasesInSwitch": true,
+	  "module": "esnext",
+	  "moduleResolution": "node",
+	  "resolveJsonModule": true,
+	  "isolatedModules": true,
+	  "noEmit": true,
+	  "jsx": "react-jsx"
 	},
+	"include": ["src/**/*"],
 	"exclude": ["node_modules"]
 }
-// 	"target": "es6",
-// 	"lib": ["dom", "dom.iterable", "esnext"],
-// 	"allowJs": true,
-// 	"skipLibCheck": true,
-// 	"esModuleInterop": true,
-// 	"allowSyntheticDefaultImports": true,
-// 	"strict": true,
-// 	"forceConsistentCasingInFileNames": true,
-// 	"module": "esnext",
-// 	"moduleResolution": "node",
-// 	"resolveJsonModule": true,
-// 	"isolatedModules": true,
-// 	"noEmit": true,
-// 	"jsx": "react-jsx",
-// 	"noImplicitAny": true,
-// 	"noFallthroughCasesInSwitch": true
-// },
-// "exclude": ["node_modules"],
-// "include": ["src"]
-//}
-/*
-compilerOptions
-esModuleInterop — the flag fixes default and namespace imports from CommonJS to TS. That's just needed 🙂
-jsx — tells TS how to treat JSX files
-module — the option tells TS how to transpile ES6 imports and exports; esnext leaves them unchanged. I recommend setting always esnext to leave this job to webpack.
-moduleResolution — historically TS used to resolve modules in other way than Node.js, so this must be set to node
-lib — this option tells TS which libraries will exist in your target environment, so TS implicitly imports their types. TS won't be able to check if these libs really exist in runtime, so that's your promise. More on this later.
-strict — enables all TS type checks
-sourceMap — enables TS emitting source maps. We will configure webpack to ignore source maps in production builds.
-target — configures target ES version which depends on your users; more on this later.
-exclude — this option excludes libs from typechecking and transpiling; however your code is still checked against typedefs provided by libs.
-*/

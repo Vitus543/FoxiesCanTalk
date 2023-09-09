@@ -1,7 +1,24 @@
-import React from 'react';
+import ComfyJS from "comfy.js";
+import { useEffect } from "react";
+import { Chat } from "./components";
 
-const App = () => {
-	return <h1> Welcome to React App thats build using Webpack and Babel separately</h1>;
-};
+function App() {
+
+  useEffect(() => {
+    ComfyJS.Init("alyxa_the_kitsune");
+  }, []);
+
+  return (
+    <div
+      style={{
+        backgroundColor: "black",
+        width: "100%",
+        height: "100%",
+      }}
+    >
+      <Chat />
+    </div>
+  );
+}
 
 export default App;

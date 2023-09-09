@@ -7,7 +7,7 @@ module.exports = {
 	mode: prod ? 'production' : 'development',
 	entry: './src/index.tsx',
 	output: {
-		path: path.resolve(__dirname, './public/index.html'),
+		path: path.resolve(__dirname, './public'),
 		filename: 'main.js',
 	},
 	devServer: {
@@ -21,11 +21,18 @@ module.exports = {
 		rules: [
 			{
 				test: /\.(ts|tsx)$/,
-				exclude: /node_modules/,
+				exclude: /node_modules|\.d\.ts$/,
 				resolve: {
 					extensions: ['.ts', '.tsx', '.js', '.json'],
 				},
-				use: 'ts-loader',
+				use: {
+					loader: 'ts-loader',
+					options: {
+						compilerOptions: {
+							noEmit: false,
+						}
+					}
+				},
 			},
 			{
 				test: /\.css$/,
