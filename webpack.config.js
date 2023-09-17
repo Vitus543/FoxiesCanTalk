@@ -4,18 +4,26 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
+	entry: './src/index.js',
 	mode: prod ? 'production' : 'development',
-	entry: './src/index.tsx',
-	output: {
-		path: path.resolve(__dirname, './public'),
-		filename: 'main.js',
+	optimization: {
+		minimize: false,
 	},
 	devServer: {
-		port: '3000',
-		static: ['./public/index.html'],
-		open: true,
-		hot: true,
-		liveReload: true,
+		hot: false,
+		port: 3000,
+		historyApiFallback: true,
+		headers: {
+			'Access-Control-Allow-Origin': '*',
+			'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+			'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization',
+		},
+	},
+	output: {
+    	filename: '[name].bundle.js',
+		chunkFilename: '[name].bundle.js',
+		path: path.resolve(__dirname, 'public'),
+		publicPath: 'auto',
 	},
 	module: {
 		rules: [
@@ -30,8 +38,8 @@ module.exports = {
 					options: {
 						compilerOptions: {
 							noEmit: false,
-						}
-					}
+						},
+					},
 				},
 			},
 			{
@@ -43,7 +51,9 @@ module.exports = {
 	devtool: prod ? undefined : 'source-map',
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: path.resolve(__dirname, './public/index.html'),
+			template: './public/index.ejs',
+			filename: 'index.html',
+			inject: 'head',
 		}),
 		new MiniCssExtractPlugin(),
 	],

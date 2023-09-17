@@ -1,24 +1,25 @@
-import ComfyJS from "comfy.js";
-import { useEffect } from "react";
-import { Chat } from "./components";
+import ComfyJS from 'comfy.js';
+import { useEffect } from 'react';
+import { Chat } from './components';
 
 function App() {
+	useEffect(() => {
+		ComfyJS.Init('alyxa_the_kitsune');
+	}, []);
 
-  useEffect(() => {
-    ComfyJS.Init("alyxa_the_kitsune");
-  }, []);
-
-  return (
-    <div
-      style={{
-        backgroundColor: "black",
-        width: "100%",
-        height: "100%",
-      }}
-    >
-      <Chat />
-    </div>
-  );
+	return (
+		<div
+			style={{
+				display: 'flex',
+				justifyContent: 'center',
+				flexDirection: 'column',
+				alignItems: 'center',
+				backgroundColor: 'transparent',
+			}}
+		>
+			<Chat />
+		</div>
+	);
 }
 
 export default App;

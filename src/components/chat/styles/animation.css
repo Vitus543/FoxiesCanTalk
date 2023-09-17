@@ -16,6 +16,7 @@
     animation-timing-function: ease-in;
 }
 
+/* 
 #chat li:not(:last-of-type) {
     opacity: 0.5;
-}
+} */
