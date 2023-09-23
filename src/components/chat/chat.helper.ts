@@ -1,20 +1,22 @@
 import ComfyJS, { OnMessageExtra } from 'comfy.js';
 import { useState } from 'react';
-import { DontShowBots, EmoteReplacement, MessageInfo } from './chat.Types';
+import { NoBots, EmoteReplacement, MessageInfo } from './chat.types';
 
 export const useChatHelper = (): MessageInfo[] => {
 	const [chatDataArray, setChatDataArray] = useState<MessageInfo[]>([]);
 
-	ComfyJS.onChat = (user, message, _flags, _self, extra) => {
-		console.log(extra);
-		if (extra.userId !== DontShowBots.InariMessage) {
+	ComfyJS.onChat = (user, message, flags, _self, extra) => {
+		console.log(extra, flags);
+		if (extra.userId !== NoBots.InariMessage) {
 			setChatDataArray((oldData) => [
 				...oldData,
 				{
 					id: extra.id,
-          user,
-          colorUser:extra.userColor,
+					user,
+					colorUser: extra.userColor,
 					text: getMessageHTML(message, extra),
+					isMod: flags.mod,
+					isSub: flags.subscriber,
 				},
 			]);
 		}

@@ -20,13 +20,24 @@ module.exports = {
 		},
 	},
 	output: {
-    	filename: '[name].bundle.js',
+		filename: '[name].bundle.js',
 		chunkFilename: '[name].bundle.js',
 		path: path.resolve(__dirname, 'public'),
 		publicPath: 'auto',
 	},
 	module: {
 		rules: [
+			{
+				test: /\.ttf|woff$/,
+				use: [
+					{
+						loader: 'ttf-loader',
+						options: {
+							name: './assets/fonts/[hash].[ext]',
+						},
+					},
+				],
+			},
 			{
 				test: /\.(ts|tsx)$/,
 				exclude: /node_modules|\.d\.ts$/,
@@ -45,6 +56,35 @@ module.exports = {
 			{
 				test: /\.css$/,
 				use: [MiniCssExtractPlugin.loader, 'css-loader'],
+			},
+			{
+				test: /\.(jpe?g|png|gif|svg)$/i,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							query: {
+								name: 'assets/[name].[ext]',
+							},
+						},
+					},
+					{
+						loader: 'image-webpack-loader',
+						options: {
+							query: {
+								mozjpeg: {
+									progressive: true,
+								},
+								gifsicle: {
+									interlaced: true,
+								},
+								optipng: {
+									optimizationLevel: 7,
+								},
+							},
+						},
+					},
+				],
 			},
 		],
 	},
