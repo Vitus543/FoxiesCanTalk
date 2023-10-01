@@ -1,6 +1,5 @@
 #chat {
     width: 400px;
-    height: 350px;
     overflow-y: auto;
     display: flex;
     flex-direction: column-reverse;
@@ -15,14 +14,6 @@
     list-style-position: outside;
     padding: unset;
 }
-
-/* #chat li {
-    background-color: hsl(196, 58%, 93%);
-    box-sizing: border-box;
-    padding: 1rem 10px;
-    margin-bottom: 10px;
-    border: 4px solid;
-} */
 
 #chat blockquote {
     font-size: 1.2rem;

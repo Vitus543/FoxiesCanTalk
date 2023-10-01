@@ -11,10 +11,11 @@ function App() {
 		<div
 			style={{
 				display: 'flex',
-				justifyContent: 'center',
+				justifyContent: 'flex-end',
 				flexDirection: 'column',
-				alignItems: 'center',
+				alignItems: 'flex-end',
 				backgroundColor: 'transparent',
+				height: '100%',
 			}}
 		>
 			<Chat />

@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-	entry: './src/index.js',
+	entry: './src/index.tsx',
 	mode: prod ? 'production' : 'development',
 	optimization: {
 		minimize: false,
@@ -31,7 +31,7 @@ module.exports = {
 				test: /\.(woff|woff2|eot|ttf|otf)$/,
 				use: {
 					loader: 'url-loader',
-				  },
+				},
 			},
 			{
 				test: /\.(ts|tsx)$/,

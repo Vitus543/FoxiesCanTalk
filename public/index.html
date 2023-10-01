@@ -4,27 +4,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Chat</title>
-<script defer src="main.bundle.js"></script>
-<style>
-  @font-face {
-	font-family: "Willful";
-	src: local('Willful'),url("./fonts/willful/Willful.ttf") format("truetype");
-}
-
-@font-face {
-	font-family: "Willful";
-	src: local('Willful'),url("./fonts/willful/Willful.otf") format("opentype");
-}
-
-html,body {
-    margin: 0;
-    background-image: url('https://cdn.discordapp.com/attachments/277202535486324746/1155206634516267118/image.png');
-    background-repeat: no-repeat;
-    background-size: 100%; 
+  <style>
+    @font-face {
     font-family: "Willful";
-}
-</style>
-</head>
+    src: local('Willful'),url("./fonts/willful/Willful.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "WillfulAlter";
+    src: local('Willful'),url("./fonts/willful/Willful.otf") format("opentype");
+  }
+  
+  html,body {
+      margin: 0;
+      font-family: "Willful";
+      font-size: 20px;
+      height: 100%;
+  }
+  
+  #root{
+    height: 100%;
+  }
+  </style>
+  <script defer src="main.bundle.js"></script><link href="main.css" rel="stylesheet"></head>
 <body>
 <noscript>You need to enable JavaScript to run this app.</noscript>
 <div id="root"></div>
