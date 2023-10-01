@@ -11,8 +11,8 @@ export const ChatList: FC<MessageInfo> = (props) => {
 		borderRadius: '10px',
 		padding: '15px',
 		borderImage: `url(${Assets.image.borders.halloweenBorder}) 30 round`,
-		backgroundColor: 'rgba(115, 73, 172, 0.6)', //'#7349AC', //'#512888', // https://www.schemecolor.com/wp-content/themes/colorsite/include/cc4.php?color0=512888&color1=7349ac&color2=eb6123&color3=da4200&pn=Halloween%20Purple%20and%20Orange
-		margin: '15px 0px',
+		backgroundColor: 'rgba(115, 73, 172, 0.6)', // https://www.schemecolor.com/wp-content/themes/colorsite/include/cc4.php?color0=512888&color1=7349ac&color2=eb6123&color3=da4200&pn=Halloween%20Purple%20and%20Orange
+		margin: '15px 15px 15px 0px',
 		textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
 	};
 
