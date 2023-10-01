@@ -18,17 +18,11 @@
     animation-duration: 0.15s;
     animation-timing-function: ease-in;
 }
-
-/* 
-#chat li:not(:last-of-type) {
-    opacity: 0.5;
-} */
 /*!********************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/chat/styles/chatStyle.css ***!
   \********************************************************************************************/
 #chat {
     width: 400px;
-    height: 350px;
     overflow-y: auto;
     display: flex;
     flex-direction: column-reverse;
