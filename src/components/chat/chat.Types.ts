@@ -1,3 +1,5 @@
+import { OnMessageFlags } from "comfy.js";
+
 export interface EmoteReplacement {
 	stringToReplace: string;
 	replacement: string;
@@ -11,8 +13,7 @@ interface Info {
 
 export interface MessageInfo extends Info {
 	text?: string;
-	isSub?: boolean;
-	isMod?: boolean;
+	flags: OnMessageFlags;
 }
 
 export enum NoBots {

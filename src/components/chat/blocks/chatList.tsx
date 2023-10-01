@@ -4,7 +4,7 @@ import { MessageInfo } from '../chat.types';
 import { Assets } from '../../../assets';
 
 export const ChatList: FC<MessageInfo> = (props) => {
-	const { text, user, colorUser, isMod, isSub } = props;
+	const { text, user, colorUser, flags } = props;
 
 	const cssHalloween: CSSProperties = {
 		border: '10px solid transparent',
@@ -13,6 +13,7 @@ export const ChatList: FC<MessageInfo> = (props) => {
 		borderImage: `url(${Assets.image.borders.halloweenBorder}) 30 round`,
 		backgroundColor: 'rgba(115, 73, 172, 0.6)', //'#7349AC', //'#512888', // https://www.schemecolor.com/wp-content/themes/colorsite/include/cc4.php?color0=512888&color1=7349ac&color2=eb6123&color3=da4200&pn=Halloween%20Purple%20and%20Orange
 		margin: '15px 0px',
+		textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
 	};
 
 	const messageHalloweenCss: CSSProperties = {
@@ -30,13 +31,13 @@ export const ChatList: FC<MessageInfo> = (props) => {
 	};
 
 	const icon = useMemo(() => {
-		if (isMod) {
+		if (flags.mod) {
 			return Assets.icons.halloween.ghost;
 		}
-		if (isSub) {
+		if (flags.subscriber) {
 			return Assets.icons.halloween.pumpkin;
 		}
-	}, [isMod, isSub]);
+	}, [flags.subscriber, flags.mod]);
 
 	return (
 		<div style={cssHalloween}>

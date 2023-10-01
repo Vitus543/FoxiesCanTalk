@@ -15,8 +15,7 @@ export const useChatHelper = (): MessageInfo[] => {
 					user,
 					colorUser: extra.userColor,
 					text: getMessageHTML(message, extra),
-					isMod: flags.mod,
-					isSub: flags.subscriber,
+					flags
 				},
 			]);
 		}

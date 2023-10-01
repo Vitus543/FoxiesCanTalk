@@ -28,15 +28,10 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.ttf|woff$/,
-				use: [
-					{
-						loader: 'ttf-loader',
-						options: {
-							name: './assets/fonts/[hash].[ext]',
-						},
-					},
-				],
+				test: /\.(woff|woff2|eot|ttf|otf)$/,
+				use: {
+					loader: 'url-loader',
+				  },
 			},
 			{
 				test: /\.(ts|tsx)$/,
