@@ -4,10 +4,16 @@ import { NoBots, EmoteReplacement, MessageInfo } from './chat.types';
 
 export const useChatHelper = (): MessageInfo[] => {
 	const [chatDataArray, setChatDataArray] = useState<MessageInfo[]>([]);
+	const NoBotsArray = [
+		NoBots.InariMessage as string,
+		NoBots.KofiStreamBot as string,
+		NoBots.SonglistBot as string,
+		NoBots.StreamElements as string,
+	];
 
 	ComfyJS.onChat = (user, message, flags, _self, extra) => {
-		console.log(extra, flags);
-		if (extra.userId !== NoBots.InariMessage) {
+
+		if (!NoBotsArray.includes(extra.userId)) {
 			setChatDataArray((oldData) => [
 				...oldData,
 				{
@@ -15,7 +21,7 @@ export const useChatHelper = (): MessageInfo[] => {
 					user,
 					colorUser: extra.userColor,
 					text: getMessageHTML(message, extra),
-					flags
+					flags,
 				},
 			]);
 		}

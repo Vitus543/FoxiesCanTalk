@@ -1,4 +1,4 @@
-import { OnMessageFlags } from "comfy.js";
+import { OnMessageFlags } from 'comfy.js';
 
 export interface EmoteReplacement {
 	stringToReplace: string;
@@ -18,4 +18,7 @@ export interface MessageInfo extends Info {
 
 export enum NoBots {
 	InariMessage = '880730797',
+	StreamElements = '100135110',
+	KofiStreamBot = '431199284',
+	SonglistBot = '156463545',
 }
