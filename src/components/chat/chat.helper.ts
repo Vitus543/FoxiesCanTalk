@@ -12,7 +12,6 @@ export const useChatHelper = (): MessageInfo[] => {
 	];
 
 	ComfyJS.onChat = (user, message, flags, _self, extra) => {
-
 		if (!NoBotsArray.includes(extra.userId)) {
 			setChatDataArray((oldData) => [
 				...oldData,
@@ -53,10 +52,10 @@ export const useChatHelper = (): MessageInfo[] => {
 
 		// generate HTML and replace all emote keywords with image elements
 
-		const messageHTML = stringReplacements.reduce((acc, { stringToReplace, replacement }) => {
+		const messageHTML = `<span>${stringReplacements.reduce((acc, { stringToReplace, replacement }) => {
 			// obs browser doesn't seam to know about replaceAll
 			return acc.split(stringToReplace).join(replacement);
-		}, message);
+		}, message)}</span>`;
 
 		return messageHTML;
 	};
