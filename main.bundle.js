@@ -47142,14 +47142,14 @@ var iconsHalloween = {
     ghost: _halloween_ghost_png__WEBPACK_IMPORTED_MODULE_0__["default"],
     pumpkin: _halloween_pumpkin_png__WEBPACK_IMPORTED_MODULE_1__["default"],
 };
-var iconsChistmas = {
+var iconsChristmas = {
     christmasTree: _christmas_christmasTree_png__WEBPACK_IMPORTED_MODULE_2__["default"],
     gingerBreadMan: _christmas_gingerBreadMan_png__WEBPACK_IMPORTED_MODULE_3__["default"],
     greenPresent: _christmas_greenPresent_png__WEBPACK_IMPORTED_MODULE_4__["default"],
 };
 var icons = {
     halloween: __assign({}, iconsHalloween),
-    chistmas: __assign({}, iconsChistmas),
+    christmas: __assign({}, iconsChristmas),
 };
 
 
@@ -47261,14 +47261,14 @@ var ChatList = function (props) {
     var icon = (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(function () {
         if (flags.mod) {
             // return Assets.icons.halloween.ghost;
-            return _assets__WEBPACK_IMPORTED_MODULE_3__.Assets.icons.chistmas.christmasTree;
+            return _assets__WEBPACK_IMPORTED_MODULE_3__.Assets.icons.christmas.christmasTree;
         }
         if (flags.subscriber) {
             // return Assets.icons.halloween.pumpkin;
-            return _assets__WEBPACK_IMPORTED_MODULE_3__.Assets.icons.chistmas.gingerBreadMan;
+            return _assets__WEBPACK_IMPORTED_MODULE_3__.Assets.icons.christmas.gingerBreadMan;
         }
         else {
-            return _assets__WEBPACK_IMPORTED_MODULE_3__.Assets.icons.chistmas.greenPresent;
+            return _assets__WEBPACK_IMPORTED_MODULE_3__.Assets.icons.christmas.greenPresent;
         }
     }, [flags.subscriber, flags.mod]);
     return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(Box, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(UserBox, __assign({ colorUser: colorUser, user: user }, { children: icon && ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", { src: icon }) })) })), text && (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(Message, { children: (0,html_react_parser__WEBPACK_IMPORTED_MODULE_2__["default"])(text) })] }) }) }));
@@ -47312,8 +47312,10 @@ var useChatHelper = function () {
         _chat_types__WEBPACK_IMPORTED_MODULE_2__.NoBots.KofiStreamBot,
         _chat_types__WEBPACK_IMPORTED_MODULE_2__.NoBots.SonglistBot,
         _chat_types__WEBPACK_IMPORTED_MODULE_2__.NoBots.StreamElements,
+        _chat_types__WEBPACK_IMPORTED_MODULE_2__.NoBots.LumiaStream,
     ];
     (comfy_js__WEBPACK_IMPORTED_MODULE_0___default().onChat) = function (user, message, flags, _self, extra) {
+        //console.log(extra.userId);
         if (!NoBotsArray.includes(extra.userId)) {
             setChatDataArray(function (oldData) { return __spreadArray(__spreadArray([], oldData, true), [
                 {
@@ -47421,6 +47423,7 @@ var NoBots;
 (function (NoBots) {
     NoBots["InariMessage"] = "880730797";
     NoBots["StreamElements"] = "100135110";
+    NoBots["LumiaStream"] = "605116711";
     NoBots["KofiStreamBot"] = "431199284";
     NoBots["SonglistBot"] = "156463545";
 })(NoBots || (NoBots = {}));
