@@ -11,13 +11,13 @@ export const ChatList: FC<MessageInfo> = (props) => {
 	const icon = useMemo(() => {
 		if (flags.mod) {
 			// return Assets.icons.halloween.ghost;
-			return Assets.icons.chistmas.christmasTree;
+			return Assets.icons.christmas.christmasTree;
 		}
 		if (flags.subscriber) {
 			// return Assets.icons.halloween.pumpkin;
-			return Assets.icons.chistmas.gingerBreadMan;
+			return Assets.icons.christmas.gingerBreadMan;
 		} else {
-			return Assets.icons.chistmas.greenPresent;
+			return Assets.icons.christmas.greenPresent;
 		}
 	}, [flags.subscriber, flags.mod]);
 	return (

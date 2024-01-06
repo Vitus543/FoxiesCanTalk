@@ -9,9 +9,11 @@ export const useChatHelper = (): MessageInfo[] => {
 		NoBots.KofiStreamBot as string,
 		NoBots.SonglistBot as string,
 		NoBots.StreamElements as string,
+		NoBots.LumiaStream as string,
 	];
 
 	ComfyJS.onChat = (user, message, flags, _self, extra) => {
+		//console.log(extra.userId);
 		if (!NoBotsArray.includes(extra.userId)) {
 			setChatDataArray((oldData) => [
 				...oldData,

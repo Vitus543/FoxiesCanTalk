@@ -19,6 +19,7 @@ export interface MessageInfo extends Info {
 export enum NoBots {
 	InariMessage = '880730797',
 	StreamElements = '100135110',
+	LumiaStream = '605116711',
 	KofiStreamBot = '431199284',
 	SonglistBot = '156463545',
 }

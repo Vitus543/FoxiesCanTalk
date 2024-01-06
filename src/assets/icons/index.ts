@@ -10,7 +10,7 @@ const iconsHalloween = {
 	pumpkin,
 };
 
-const iconsChistmas = {
+const iconsChristmas = {
 	christmasTree,
 	gingerBreadMan,
 	greenPresent,
@@ -20,7 +20,7 @@ export const icons = {
 	halloween: {
 		...iconsHalloween,
 	},
-	chistmas: {
-		...iconsChistmas,
+	christmas: {
+		...iconsChristmas,
 	},
 };
