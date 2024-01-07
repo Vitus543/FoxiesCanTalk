@@ -1,7 +1,7 @@
 import { image } from './image';
 import { icons } from './icons';
-import { Helpers } from '../helper';
 import { Anything } from '../types';
+import { badges } from './badges';
 
 interface Assets {
 	borders?: string;
@@ -9,6 +9,10 @@ interface Assets {
 		mod?: string;
 		subscriber?: string;
 		chatters?: string;
+	};
+	badges?: {
+		mod?: string;
+		artist?: string;
 	};
 }
 
@@ -32,7 +36,11 @@ export const GetAssets = (selectedTheme: Anything): Assets | undefined => {
 		}
 		case 'D':
 		default: {
-			return undefined;
+			return {
+				badges: {
+					...badges,
+				},
+			};
 		}
 	}
 };

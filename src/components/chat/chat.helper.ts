@@ -23,6 +23,7 @@ export const useChatHelper = (): MessageInfo[] => {
 					colorUser: extra.userColor,
 					text: getMessageHTML(message, extra),
 					flags,
+					badges: extra.userBadges,
 				},
 			]);
 		}
