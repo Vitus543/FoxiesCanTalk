@@ -9,8 +9,11 @@ function App() {
 		ComfyJS.Init('alyxa_the_kitsune');
 	}, []);
 
+	const url = new URL(window.location.href);
+	const selectedTheme = url.searchParams.get('theme');
+
 	return (
-		<ThemeProvider theme={getTheme(undefined)}>
+		<ThemeProvider theme={getTheme(selectedTheme)}>
 			<div
 				style={{
 					display: 'flex',

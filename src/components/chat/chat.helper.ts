@@ -13,7 +13,7 @@ export const useChatHelper = (): MessageInfo[] => {
 	];
 
 	ComfyJS.onChat = (user, message, flags, _self, extra) => {
-		//console.log(extra.userId);
+		console.log(extra);
 		if (!NoBotsArray.includes(extra.userId)) {
 			setChatDataArray((oldData) => [
 				...oldData,
