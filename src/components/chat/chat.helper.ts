@@ -24,6 +24,7 @@ export const useChatHelper = (): MessageInfo[] => {
 					text: getMessageHTML(message, extra),
 					flags,
 					badges: extra.userBadges,
+					hasBadges: extra.userBadges != null,
 				},
 			]);
 		}

@@ -15,6 +15,7 @@ export interface MessageInfo extends Info {
 	text?: string;
 	flags: OnMessageFlags;
 	badges: Badges;
+	hasBadges: boolean;
 }
 
 export enum NoBots {

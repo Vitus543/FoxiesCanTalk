@@ -6,14 +6,14 @@ import { styledComponents } from '../../../styledComponents';
 import { Helpers } from '../../../helper';
 
 export const ChatList: FC<MessageInfo> = (props) => {
-	const { text, user, colorUser, flags, badges } = props;
+	const { text, user, colorUser, flags, badges, hasBadges } = props;
 	const { Box, UserBox, Message } = styledComponents;
 	let icons: JSX.Element | undefined;
 	const selectedTheme = Helpers.getSessionStorage<string>('theme');
 	if (selectedTheme === 'H' || selectedTheme === 'C') {
 		icons = <img src={getAssetsPerTheme(selectedTheme)} />;
 	} else {
-		icons = getBadgeOnDefaultTheme(selectedTheme ?? 'D');
+		icons = hasBadges ? getBadgeOnDefaultTheme(selectedTheme ?? 'D') : undefined;
 	}
 
 	function getAssetsPerTheme(selectedTheme: string) {
@@ -78,6 +78,7 @@ export const ChatList: FC<MessageInfo> = (props) => {
 				selectedBadge = BadgesPerMonths.Badges12;
 				break;
 			case '1':
+			case '0':
 			default:
 				selectedBadge = BadgesPerMonths.Badge1;
 				break;
