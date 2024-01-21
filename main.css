@@ -18,6 +18,31 @@
     animation-duration: 0.15s;
     animation-timing-function: ease-in;
 }
+
+@keyframes slide-in-leftRevered {
+    from {
+        transform: translateX(400px);
+        transform: rotate(-180deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        transform: rotate(-180deg);
+        opacity: 1;
+    }
+}
+
+#list-reversed > div > li:last-of-type {
+    animation-name: slide-in-leftRevered;
+    animation-duration: 0.15s;
+    animation-timing-function: ease-in;
+}
+
+
+
+
+
 /*!********************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/chat/styles/chatStyle.css ***!
   \********************************************************************************************/
@@ -36,6 +61,15 @@
     list-style-type: none;
     list-style-position: outside;
     padding: unset;
+    
+}
+
+#list-reversed {
+    transform: rotate(180deg);
+}
+
+#list-reversed > div > li {
+    transform: rotate(-180deg);
 }
 
 #chat blockquote {
