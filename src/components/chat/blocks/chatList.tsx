@@ -1,4 +1,4 @@
-import { FC, useMemo } from 'react';
+import { FC} from 'react';
 import parse from 'html-react-parser';
 import { BadgesPerMonths, MessageInfo } from '../chat.types';
 import { GetAssets } from '../../../assets';
@@ -9,6 +9,7 @@ export const ChatList: FC<MessageInfo> = (props) => {
 	const { text, user, colorUser, flags, badges, hasBadges } = props;
 	const { Box, UserBox, Message } = styledComponents;
 	let icons: JSX.Element | undefined;
+
 	const selectedTheme = Helpers.getSessionStorage<string>('theme');
 	if (selectedTheme === 'H' || selectedTheme === 'C') {
 		icons = <img src={getAssetsPerTheme(selectedTheme)} />;

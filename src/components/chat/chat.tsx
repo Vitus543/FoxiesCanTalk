@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { useChatHelper } from './chat.helper';
 import { ChatList } from './blocks/chatList';
 import { MessageInfo } from './chat.types';
@@ -8,6 +8,15 @@ import { useGetUrlParams } from '../../hooks';
 
 export const Chat: FC = () => {
 	const chatDataArray = useChatHelper();
+
+	//TODO
+	// useEffect(() => {
+	//   debugger;
+	// 	if (getUrlChatMode()?.toLocaleLowerCase() === 'G'.toLocaleLowerCase()) {
+	// 		window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+	// 	}
+	// }, [JSON.stringify(chatDataArray)]);
+
 	const { getUrlChatMode } = useGetUrlParams();
 	let id = '';
 

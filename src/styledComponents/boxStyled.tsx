@@ -46,7 +46,7 @@ export const BoxStyled: FC<{ children: ReactNode }> = ({ children }) => {
 	}, [selectedTheme]);
 
 	return (
-		<BoxStyled component="div" style={styles}>
+		<BoxStyled component="div" style={{ overflowWrap: 'anywhere', ...styles }}>
 			{children}
 		</BoxStyled>
 	);

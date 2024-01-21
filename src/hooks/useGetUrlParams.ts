@@ -16,7 +16,7 @@ export const useGetUrlParams = () => {
 		const modeSession = Helpers.getSessionStorage<string>('mode');
 		if (modeSession === undefined || modeSession === '' || modeSession !== url.searchParams.get('mode')) {
 			const urlMode = url.searchParams.get('mode');
-			Helpers.saveSessionStorage('mode', modeSession);
+			Helpers.saveSessionStorage('mode', urlMode);
 			return urlMode;
 		}
 		return modeSession;

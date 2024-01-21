@@ -1,5 +1,4 @@
 import { createTheme } from '@mui/material/styles';
-import { Helpers } from './helper';
 
 const defaultTheme = createTheme({
 	palette: {
@@ -7,7 +6,7 @@ const defaultTheme = createTheme({
 			primary: '#000000',
 		},
 		background: {
-			paper: '#d6ba8a',
+			paper: '#d6ba8a99',
 		},
 	},
 	spacing: [0, 5, 8, 10, 15, 20],
