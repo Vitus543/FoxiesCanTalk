@@ -78,7 +78,6 @@ const christmasTheme = createTheme({
 
 export const getTheme = (theme: string | null) => {
 	const selectedTheme = theme === null || theme === '' ? 'D' : theme.toLocaleUpperCase();
-	Helpers.saveSessionStorage('theme', selectedTheme);
 
 	switch (selectedTheme) {
 		case 'H':

@@ -1,7 +1,8 @@
 import { ThemeProvider } from '@mui/material';
 import ComfyJS from 'comfy.js';
-import { useEffect } from 'react';
+import { CSSProperties, useEffect } from 'react';
 import { Chat } from './components';
+import { useGetUrlParams } from './hooks';
 import { getTheme } from './theme';
 
 function App() {
@@ -9,19 +10,27 @@ function App() {
 		ComfyJS.Init('alyxa_the_kitsune');
 	}, []);
 
-	const url = new URL(window.location.href);
-	const selectedTheme = url.searchParams.get('theme');
+	const { getUrlSelectedTheme, getUrlChatMode } = useGetUrlParams();
+	let flexSettings: CSSProperties = {
+		justifyContent: 'flex-end',
+	};
+
+	if (getUrlChatMode()?.toLocaleLowerCase() === 'G'.toLocaleLowerCase()) {
+		flexSettings = {
+			justifyContent: 'flex-start',
+		};
+	}
 
 	return (
-		<ThemeProvider theme={getTheme(selectedTheme)}>
+		<ThemeProvider theme={getTheme(getUrlSelectedTheme())}>
 			<div
 				style={{
 					display: 'flex',
-					justifyContent: 'flex-end',
 					flexDirection: 'column',
-					alignItems: 'flex-end',
 					backgroundColor: 'transparent',
 					height: '100%',
+					alignItems: 'flex-end',
+					...flexSettings,
 				}}
 			>
 				<Chat />

@@ -1,8 +1,5 @@
-
-
 const SESSION_STORAGE_PREFIX = '__session_storage_fox_chats';
-type SessionStorageKeys = 'theme'
-
+type SessionStorageKeys = 'theme' | 'mode';
 
 export const getSessionStorage = <TOutput>(key: SessionStorageKeys): TOutput | undefined => {
 	try {

@@ -13,6 +13,15 @@
     list-style-type: none;
     list-style-position: outside;
     padding: unset;
+    
+}
+
+#list-reversed {
+    transform: rotate(180deg);
+}
+
+#list-reversed > div > li {
+    transform: rotate(-180deg);
 }
 
 #chat blockquote {
