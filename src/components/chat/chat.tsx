@@ -5,15 +5,16 @@ import { MessageInfo } from './chat.types';
 import './styles/animation.css';
 import './styles/chatStyle.css';
 import { useGetUrlParams } from '../../hooks';
+import $ from 'jquery';
 
 export const Chat: FC = () => {
 	const chatDataArray = useChatHelper();
 
 	//TODO
 	// useEffect(() => {
-	//   debugger;
+	// 	debugger;
 	// 	if (getUrlChatMode()?.toLocaleLowerCase() === 'G'.toLocaleLowerCase()) {
-	// 		window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+	// 		$(document).scrollTop();
 	// 	}
 	// }, [JSON.stringify(chatDataArray)]);
 
