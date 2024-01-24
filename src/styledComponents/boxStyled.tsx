@@ -3,9 +3,11 @@ import { Box } from '@mui/system';
 import { FC, ReactNode, useMemo } from 'react';
 import { GetAssets } from '../assets';
 import { Helpers } from '../helper';
+import { useGetUrlParams } from '../hooks';
 
 export const BoxStyled: FC<{ children: ReactNode }> = ({ children }) => {
 	const selectedTheme = Helpers.getSessionStorage('theme');
+	const { getUrlChatMode } = useGetUrlParams();
 	const assets = GetAssets(selectedTheme);
 
 	let styles = undefined;
@@ -13,7 +15,7 @@ export const BoxStyled: FC<{ children: ReactNode }> = ({ children }) => {
 		styles = {
 			borderImage: `url(${assets.borders}) 30 round`,
 		};
-	}
+	}	
 
 	const BoxStyled = useMemo(() => {
 		if (selectedTheme === 'H') {
@@ -22,7 +24,10 @@ export const BoxStyled: FC<{ children: ReactNode }> = ({ children }) => {
 				border: `${theme.spacing(3)} solid transparent`,
 				padding: theme.spacing(4),
 				backgroundColor: theme.palette.background.paper,
-				margin: theme.spacing(4, 4, 4, 0),
+				margin:
+					getUrlChatMode()?.toLocaleLowerCase() === 'G'.toLocaleLowerCase()
+						? theme.spacing(4, 0, 4, 4)
+						: theme.spacing(4, 4, 4, 0),
 			}));
 		} else if (selectedTheme === 'C') {
 			return styled(Box)(({ theme }) => ({
@@ -30,7 +35,10 @@ export const BoxStyled: FC<{ children: ReactNode }> = ({ children }) => {
 				border: `${theme.spacing(4)} solid transparent`,
 				padding: theme.spacing(4),
 				backgroundColor: theme.palette.background.paper, //'background.default', // https://www.schemecolor.com/wp-content/themes/colorsite/include/cc4.php?color0=512888&color1=7349ac&color2=eb6123&color3=da4200&pn=Halloween%20Purple%20and%20Orange
-				margin: theme.spacing(4, 4, 4, 0),
+				margin:
+					getUrlChatMode()?.toLocaleLowerCase() === 'G'.toLocaleLowerCase()
+						? theme.spacing(4, 0, 4, 4)
+						: theme.spacing(4, 4, 4, 0),
 				textShadow: theme.shadows[1],
 			}));
 		} else {
@@ -40,7 +48,10 @@ export const BoxStyled: FC<{ children: ReactNode }> = ({ children }) => {
 				borderStartStartRadius: theme.spacing(5),
 				padding: theme.spacing(4),
 				backgroundColor: theme.palette.background.paper, //'background.default', // https://www.schemecolor.com/wp-content/themes/colorsite/include/cc4.php?color0=512888&color1=7349ac&color2=eb6123&color3=da4200&pn=Halloween%20Purple%20and%20Orange
-				margin: theme.spacing(4, 4, 4, 0),
+				margin:
+					getUrlChatMode()?.toLocaleLowerCase() === 'G'.toLocaleLowerCase()
+						? theme.spacing(4, 0, 4, 4)
+						: theme.spacing(4, 4, 4, 0),
 			}));
 		}
 	}, [selectedTheme]);

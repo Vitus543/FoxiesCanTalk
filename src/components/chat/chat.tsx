@@ -10,13 +10,14 @@ import $ from 'jquery';
 export const Chat: FC = () => {
 	const chatDataArray = useChatHelper();
 
-	//TODO
-	// useEffect(() => {
-	// 	debugger;
-	// 	if (getUrlChatMode()?.toLocaleLowerCase() === 'G'.toLocaleLowerCase()) {
-	// 		$(document).scrollTop();
-	// 	}
-	// }, [JSON.stringify(chatDataArray)]);
+	// TODO;
+	useEffect(() => {
+		if (getUrlChatMode()?.toLocaleLowerCase() === 'G'.toLocaleLowerCase()) {
+			$(document).scrollTop();
+		} else {
+			$(document).scrollTop($(document).height() ?? 0);
+		}
+	}, [JSON.stringify(chatDataArray)]);
 
 	const { getUrlChatMode } = useGetUrlParams();
 	let id = '';
