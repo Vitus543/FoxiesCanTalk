@@ -4,13 +4,17 @@ import { NoBots, EmoteReplacement, MessageInfo } from './chat.types';
 
 export const useChatHelper = (): MessageInfo[] => {
 	const [chatDataArray, setChatDataArray] = useState<MessageInfo[]>([]);
+	// better this
 	const NoBotsArray = [
 		NoBots.InariMessage as string,
 		NoBots.KofiStreamBot as string,
 		NoBots.SonglistBot as string,
 		NoBots.StreamElements as string,
 		NoBots.LumiaStream as string,
+		NoBots.SeryBot as string,
+		NoBots.PrimsLiveStudio as string,
 	];
+	
 
 	ComfyJS.onChat = (user, message, flags, _self, extra) => {
 		console.log(extra);

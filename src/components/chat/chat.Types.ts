@@ -24,6 +24,8 @@ export enum NoBots {
 	LumiaStream = '605116711',
 	KofiStreamBot = '431199284',
 	SonglistBot = '156463545',
+	SeryBot = '402337290',
+	PrimsLiveStudio = '198471448',
 }
 
 export enum BadgesPerMonths {
