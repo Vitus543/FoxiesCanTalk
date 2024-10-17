@@ -57855,10 +57855,12 @@ function App() {
     var _b = (0,_hooks__WEBPACK_IMPORTED_MODULE_4__.useGetUrlParams)(), getUrlSelectedTheme = _b.getUrlSelectedTheme, getUrlChatMode = _b.getUrlChatMode;
     var flexSettings = {
         justifyContent: 'flex-end',
+        height: '100%',
     };
     if (((_a = getUrlChatMode()) === null || _a === void 0 ? void 0 : _a.toLocaleLowerCase()) === 'G'.toLocaleLowerCase()) {
         flexSettings = {
             justifyContent: 'flex-start',
+            height: '100%',
         };
     }
     return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], __assign({ theme: (0,_theme__WEBPACK_IMPORTED_MODULE_5__.getTheme)(getUrlSelectedTheme()) }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", __assign({ style: __assign({ display: 'flex', flexDirection: 'column', backgroundColor: 'transparent', height: '100%', alignItems: 'flex-end' }, flexSettings) }, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components__WEBPACK_IMPORTED_MODULE_3__.Chat, {}) })) })));
