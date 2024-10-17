@@ -13,11 +13,13 @@ function App() {
 	const { getUrlSelectedTheme, getUrlChatMode } = useGetUrlParams();
 	let flexSettings: CSSProperties = {
 		justifyContent: 'flex-end',
+		height: '100%',
 	};
 
 	if (getUrlChatMode()?.toLocaleLowerCase() === 'G'.toLocaleLowerCase()) {
 		flexSettings = {
 			justifyContent: 'flex-start',
+			height: '100%',
 		};
 	}
 
