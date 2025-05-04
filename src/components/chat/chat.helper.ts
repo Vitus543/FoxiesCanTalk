@@ -14,7 +14,6 @@ export const useChatHelper = (): MessageInfo[] => {
 		NoBots.SeryBot as string,
 		NoBots.PrimsLiveStudio as string,
 	];
-	
 
 	ComfyJS.onChat = (user, message, flags, _self, extra) => {
 		console.log(extra);
